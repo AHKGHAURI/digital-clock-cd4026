@@ -63,3 +63,10 @@ The circuit was also assembled as physical hardware. The wiring is a first attem
 
 - The Proteus schematic is adapted from an existing CD4026 digital-clock circuit shared online, and modified for this project.
 - Group project for the Digital Logic Design course, NUST.
+
+### Team
+
+- [Ahmad Hassan](https://github.com/AHKGHAURI)
+- M Haseeb
+- Abdur Rehman
+- Sultan Ali
