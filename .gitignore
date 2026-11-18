@@ -1,0 +1,16 @@
+# Simulation output
+*.vcd
+*.vvp
+clock_sim
+clock_tb
+
+# ModelSim
+work/
+transcript
+*.wlf
+modelsim.ini
+
+# Proteus
+Project Backups/
+*.workspace
+*.pdsbak
