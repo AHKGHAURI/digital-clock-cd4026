@@ -45,6 +45,16 @@ The testbench sets `CLK_FREQ = 10` so ten clock cycles equal one simulated secon
 
 In **ModelSim**, add the files in `rtl/` and `sim/` to a project, compile, and simulate `digital_clock_tb`.
 
+### Simulation results (ModelSim)
+
+**First ~22 simulated seconds.** `tick_1hz` fires once per simulated second, the seconds-units counter steps 0→9, and its carry advances the seconds-tens digit:
+
+![ModelSim waveform: seconds counting and carry into the tens digit](docs/wave_overview.png)
+
+**Minute rollover, 00:00:59 → 00:01:00.** Seconds units wrap 9→0, then the seconds-tens carry wraps 5→0 and increments minutes units. Each stage updates one clock cycle after the previous one because carries are registered:
+
+![ModelSim waveform: carry chain at the minute rollover](docs/wave_minute_rollover.png)
+
 To target an FPGA board, set `CLK_FREQ` on `digital_clock` to the board's oscillator frequency. Invert the segment outputs (`~seg`) for common-anode displays.
 
 ## Repository structure
@@ -53,6 +63,7 @@ To target an FPGA board, set `CLK_FREQ` on `digital_clock` to the board's oscill
 rtl/        Verilog design modules
 sim/        Testbench
 proteus/    Proteus 8 schematic of the CD4026 hardware circuit
+docs/       Simulation screenshots
 ```
 
 ## Hardware
